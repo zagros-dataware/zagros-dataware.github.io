@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { getAllResources } from "@/lib/content";
+import { trackList } from "@/lib/tracks";
 import SectionTitle from "./SectionTitle";
 import ResourceCard from "./ResourceCard";
 import { StaggerGroup, StaggerItem } from "./motion/Stagger";
 
 export default function ResourcesTeaser() {
-  const resources = getAllResources().slice(0, 3);
+  const all = getAllResources();
+  // one most-recent item per track, so this stays representative of all
+  // three practice areas instead of being dominated by whichever track
+  // happens to have the newest entries.
+  const resources = trackList
+    .map((track) => all.find((r) => r.track === track.id))
+    .filter((r): r is NonNullable<typeof r> => Boolean(r));
   if (resources.length === 0) return null;
 
   return (

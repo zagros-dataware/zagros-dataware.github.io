@@ -6,9 +6,17 @@ import ResourceCard from "../ResourceCard";
 import Reveal from "../motion/Reveal";
 import { StaggerGroup, StaggerItem } from "../motion/Stagger";
 
-export default function RelatedContent({ track }: { track: TrackId }) {
+export default function RelatedContent({
+  track,
+  includeResources = true,
+}: {
+  track: TrackId;
+  includeResources?: boolean;
+}) {
   const posts = getAllPosts().filter((p) => p.track === track).slice(0, 2);
-  const resources = getAllResources().filter((r) => r.track === track).slice(0, 2);
+  const resources = includeResources
+    ? getAllResources().filter((r) => r.track === track).slice(0, 2)
+    : [];
 
   if (posts.length === 0 && resources.length === 0) return null;
 
