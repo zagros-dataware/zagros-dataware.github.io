@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Zagros Dataware — Capability Statement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    width: 816px;
+    min-height: 1056px;
+    font-family: "Inter", -apple-system, sans-serif;
+    color: #1e293b;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    display: flex;
+    flex-direction: column;
+  }
+  .band {
+    background: linear-gradient(120deg, #0d233a 0%, #1e3a5f 100%);
+    color: white;
+    padding: 34px 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand svg { width: 40px; height: auto; }
+  .brand .word { font-family: "Big Shoulders Display", sans-serif; font-weight: 800; font-size: 22px; line-height: 1; }
+  .brand .word span { display: block; font-weight: 500; opacity: 0.7; font-size: 15px; letter-spacing: 0.04em; }
+  .band .mantra { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #10b981; text-align: right; }
+  .band .mantra .sub { color: rgba(255,255,255,0.6); margin-top: 4px; font-size: 10px; letter-spacing: 0.06em; }
+
+  .body-pad { padding: 30px 46px 0; flex: 1; }
+
+  .lede { font-size: 13.5px; color: #4a5568; max-width: 640px; line-height: 1.55; }
+
+  h2.h { font-family: "Big Shoulders Display", sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.03em; text-transform: uppercase; color: #0d233a; margin-top: 26px; margin-bottom: 12px; }
+
+  .tracks { display: flex; gap: 18px; }
+  .track { flex: 1; border-top: 3px solid var(--c); padding-top: 10px; }
+  .track .name { font-weight: 700; font-size: 13px; color: #0d233a; }
+  .track .tagline { font-size: 10.5px; color: #4a5568; margin-top: 3px; line-height: 1.4; }
+  .track ul { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 5px; }
+  .track li { font-size: 10.5px; color: #1e293b; padding-left: 12px; position: relative; line-height: 1.4; }
+  .track li:before { content: ""; position: absolute; left: 0; top: 5px; width: 5px; height: 5px; border-radius: 50%; background: var(--c); }
+
+  .work { display: flex; gap: 16px; }
+  .proj { flex: 1; border: 1px solid #d8e0e8; border-radius: 6px; padding: 12px 14px; }
+  .proj .pname { font-weight: 700; font-size: 12px; color: #0d233a; }
+  .proj .pind { font-family: "IBM Plex Mono", monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; color: #059669; margin-top: 2px; }
+  .proj .purl { font-size: 10px; color: #4a5568; margin-top: 6px; }
+
+  .foot {
+    margin-top: 28px;
+    background: #0d233a;
+    color: white;
+    padding: 16px 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+  }
+  .foot a { color: #10b981; text-decoration: none; }
+</style>
+</head>
+<body>
+
+  <div class="band">
+    <div class="brand">
+      <svg viewBox="0 0 168 108">
+        <polygon points="8,100 30,50 52,100" fill="white"/>
+        <polygon points="50,100 80,18 112,100" fill="white"/>
+        <polygon points="102,100 132,42 160,100" fill="white"/>
+      </svg>
+      <div class="word">ZAGROS<span>DATAWARE</span></div>
+    </div>
+    <div class="mantra">Evidence Over Guesswork<div class="sub">Capability Statement</div></div>
+  </div>
+
+  <div class="body-pad">
+    <p class="lede">Zagros Dataware is a process and design consultancy registered in Yerevan, Armenia, running three practices under one name: enterprise process discipline, startup validation speed, and process-minded web design for local business. We apply the right discipline at the right speed — structure where it protects you, speed where it saves you.</p>
+
+    <h2 class="h">Practices</h2>
+    <div class="tracks">
+      <div class="track" style="--c:#0d233a">
+        <div class="name">Enterprise Process &amp; ERP</div>
+        <div class="tagline">Institutional-grade process discipline, engineered for scale.</div>
+        <ul>
+          <li>BPM &amp; BPMS implementation</li>
+          <li>Agile-BPM iterative delivery</li>
+          <li>BABOK business analysis</li>
+          <li>ERP consulting &amp; rollout</li>
+        </ul>
+      </div>
+      <div class="track" style="--c:#6366f1">
+        <div class="name">Startup Enablement</div>
+        <div class="tagline">Validate faster, build the right thing, de-risk the bet.</div>
+        <ul>
+          <li>Lean Startup / Build-Measure-Learn</li>
+          <li>Google Design Sprints</li>
+          <li>Design Thinking facilitation</li>
+          <li>Value Proposition Design (Strategyzer)</li>
+        </ul>
+      </div>
+      <div class="track" style="--c:#f59e0b">
+        <div class="name">Web Design &amp; Local Commerce</div>
+        <div class="tagline">Get your business found, trusted, and bought from — online.</div>
+        <ul>
+          <li>Business website design</li>
+          <li>Online ordering &amp; booking</li>
+          <li>Local discoverability / SEO</li>
+          <li>Ongoing care &amp; iteration</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="h">Selected Work</h2>
+    <div class="work">
+      <div class="proj">
+        <div class="pname">Van Arm Line Co.</div>
+        <div class="pind">Freight &amp; Logistics</div>
+        <div class="purl">vanarmline.com</div>
+      </div>
+      <div class="proj">
+        <div class="pname">Van Pro Co.</div>
+        <div class="pind">Industrial Manufacturing</div>
+        <div class="purl">vanproco.com</div>
+      </div>
+      <div class="proj">
+        <div class="pname">The Grizzly</div>
+        <div class="pind">Music &amp; Performance</div>
+        <div class="purl">thegrizzlysound.github.io</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>&copy; 2026 Zagros Dataware LLC &mdash; Yerevan, Armenia</span>
+    <span><a href="mailto:honarmand.ali.ha@gmail.com">honarmand.ali.ha@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://zagros-dataware.github.io/">zagros-dataware.github.io</a></span>
+  </div>
+
+</body>
+</html>
