@@ -6,7 +6,7 @@ export const site = {
     "Zagros Dataware is a premier IT products, consultancy, and business process optimization firm, registered in Armenia. We bridge complex technical requirements and high-level institutional goals through BPM, Agile delivery, and strategic IT consulting.",
   email: "honarmand.ali.ha@gmail.com",
   location: "Yerevan, Armenia",
-  url: "https://zagros-dataware.github.io/zagros-dataware/",
+  url: "https://zagros-dataware.github.io/",
 };
 
 export const navLinks = [
