@@ -1,98 +1,38 @@
 export const site = {
   name: "Zagros Dataware",
   legalName: "Zagros Dataware LLC",
-  tagline: "Empowering Organizational Excellence",
+  tagline: "Process Discipline for Enterprises. Speed for Startups.",
   description:
-    "Zagros Dataware is a premier IT products, consultancy, and business process optimization firm, registered in Armenia. We bridge complex technical requirements and high-level institutional goals through BPM, Agile delivery, and strategic IT consulting.",
+    "Zagros Dataware is an IT products, consultancy, and business process optimization firm registered in Armenia. We bring BPM, Agile-BPM, BABOK, and ERP discipline to enterprises and public institutions, Lean Startup, Design Sprints, Design Thinking, and Value Proposition Design to startups, and process-minded web design to local businesses.",
   email: "honarmand.ali.ha@gmail.com",
   location: "Yerevan, Armenia",
   url: "https://zagros-dataware.github.io/",
 };
-
-export const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#pillars", label: "Expertise" },
-  { href: "#services", label: "Services" },
-  { href: "#approach", label: "Approach" },
-  { href: "#sectors", label: "Sectors" },
-  { href: "#contact", label: "Contact" },
-];
-
-export const pillars = [
-  {
-    title: "Organizational Excellence",
-    description:
-      "We leverage industry-standard BPM (Business Process Management) frameworks and BABOK methodologies to comprehensively analyze, streamline, and scale corporate and institutional workflows.",
-  },
-  {
-    title: "Agile Frameworks",
-    description:
-      "We build and ship cutting-edge IT products utilizing highly collaborative, iterative Agile principles, ensuring rapid value delivery and total adaptability to evolving requirements.",
-  },
-  {
-    title: "Strategic IT Consultancy",
-    description:
-      "Our professional consulting services translate technology investments directly into tangible operational metrics, ensuring alignment with your long-term roadmap.",
-  },
-] as const;
-
-export const services = [
-  {
-    title: "BPM & Process Re-engineering",
-    description:
-      "End-to-end mapping, analysis, and redesign of core business processes to eliminate bottlenecks and raise operational efficiency.",
-  },
-  {
-    title: "Agile Product Delivery",
-    description:
-      "Cross-functional, iterative delivery of IT products — from discovery and backlog shaping through to release and continuous improvement.",
-  },
-  {
-    title: "IT Strategy & Advisory",
-    description:
-      "Technology roadmaps that tie infrastructure and platform investment directly to institutional goals and measurable outcomes.",
-  },
-  {
-    title: "Systems Integration",
-    description:
-      "Connecting disparate platforms, data sources, and legacy systems into coherent, maintainable architectures.",
-  },
-  {
-    title: "Digital Transformation",
-    description:
-      "Structured transformation programs that modernize workflows and digital touchpoints for public and private institutions.",
-  },
-  {
-    title: "Training & Enablement",
-    description:
-      "BABOK- and Agile-aligned enablement for internal teams, building lasting in-house capability rather than dependency.",
-  },
-] as const;
 
 export const approach = [
   {
     step: "01",
     title: "Discover",
     description:
-      "We study your current processes, systems, and institutional goals to build a shared, evidence-based understanding.",
+      "We study your current processes, systems, or customer assumptions to build a shared, evidence-based understanding — whether that's a workflow audit or a round of customer interviews.",
   },
   {
     step: "02",
     title: "Design",
     description:
-      "We design target-state workflows and technical architecture aligned to BPM and BABOK best practices.",
+      "We design target-state workflows, prototypes, or value propositions using the discipline that fits — BPM and BABOK for institutional process, Design Thinking and Strategyzer canvases for new offers.",
   },
   {
     step: "03",
     title: "Deliver",
     description:
-      "We ship in short, Agile iterations — validating value early and adapting as requirements evolve.",
+      "We ship in short, testable iterations — an Agile-BPM release, a five-day Design Sprint, a launched storefront — validating value early and adapting as requirements evolve.",
   },
   {
     step: "04",
     title: "Optimize",
     description:
-      "We measure outcomes against operational metrics and continuously refine for long-term performance.",
+      "We measure outcomes against the metrics that matter — cycle time, conversion, adoption — and continuously refine for long-term performance.",
   },
 ] as const;
 
@@ -108,3 +48,20 @@ export const sectors = [
       "For private sector enterprises, we engineer scalable, highly competitive software products and optimize bottlenecks to drive rapid market growth and operational lean-ness.",
   },
 ] as const;
+
+export const footerLinks = {
+  Services: [
+    { href: "/enterprise", label: "Enterprise Process & ERP" },
+    { href: "/startups", label: "Startup Enablement" },
+    { href: "/web-design", label: "Web Design & Local Commerce" },
+  ],
+  Company: [
+    { href: "/#about", label: "About" },
+    { href: "/#approach", label: "Approach" },
+    { href: "/#contact", label: "Contact" },
+  ],
+  Library: [
+    { href: "/blog", label: "Blog" },
+    { href: "/resources", label: "Resources & Use Cases" },
+  ],
+};

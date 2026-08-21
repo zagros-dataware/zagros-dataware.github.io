@@ -1,9 +1,9 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Pillars from "@/components/Pillars";
-import Services from "@/components/Services";
+import PracticeAreas from "@/components/PracticeAreas";
 import Approach from "@/components/Approach";
-import Sectors from "@/components/Sectors";
+import ResourcesTeaser from "@/components/ResourcesTeaser";
+import BlogTeaser from "@/components/BlogTeaser";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <Hero />
       <About />
-      <Pillars />
-      <Services />
+      <PracticeAreas />
       <Approach />
-      <Sectors />
+      <ResourcesTeaser />
+      <BlogTeaser />
       <Contact />
     </>
   );

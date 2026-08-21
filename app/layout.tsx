@@ -13,13 +13,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} | IT Products, Consultancy & BPM`,
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} | Enterprise BPM, Startup Enablement & Web Design`,
+    template: `%s | ${site.name}`,
+  },
   description: site.description,
   icons: {
     icon: `${basePath}/favicon.png`,
   },
   openGraph: {
-    title: `${site.name} | IT Products, Consultancy & BPM`,
+    title: `${site.name} | Enterprise BPM, Startup Enablement & Web Design`,
     description: site.description,
     url: site.url,
     siteName: site.name,
