@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { tracks } from "@/lib/tracks";
 import TrackHero from "@/components/track/TrackHero";
 import TrackCapabilities from "@/components/track/TrackCapabilities";
+import SelectedWork from "@/components/track/SelectedWork";
 import PortfolioShowcase from "@/components/track/PortfolioShowcase";
 import RelatedContent from "@/components/track/RelatedContent";
 import TrackCTA from "@/components/track/TrackCTA";
@@ -18,6 +19,7 @@ export default function WebDesignPage() {
     <>
       <TrackHero track={track} />
       <TrackCapabilities track={track} />
+      <SelectedWork />
       <PortfolioShowcase />
       <RelatedContent track={track.id} includeResources={false} />
       <TrackCTA track={track} />

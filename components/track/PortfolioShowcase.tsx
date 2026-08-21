@@ -23,13 +23,13 @@ export default function PortfolioShowcase() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <Reveal>
-            <SectionTitle>Representative Projects</SectionTitle>
+            <SectionTitle>Common Project Types</SectionTitle>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-secondary">
-              A look at the kinds of local-business sites we build. These are
-              illustrative project types, not disclosed client work — ask us
-              for references from real engagements.
+              Beyond the live projects above, here are the recurring patterns
+              we design for. These scenarios are illustrative, not disclosed
+              client work.
             </p>
           </Reveal>
         </div>
