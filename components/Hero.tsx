@@ -8,8 +8,8 @@ export default function Hero() {
       <HeroBackground />
 
       <div className="relative mx-auto max-w-3xl animate-fade-up">
-        <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/90 ring-1 ring-white/20">
-          IT Products · Consultancy · Process &amp; Product Design
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium tracking-wide text-accent uppercase ring-1 ring-white/20">
+          Evidence Over Guesswork
         </span>
 
         <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">

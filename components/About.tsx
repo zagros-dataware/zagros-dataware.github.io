@@ -19,6 +19,13 @@ export default function About() {
             Startup speed where validation matters most.
           </p>
         </Reveal>
+        <Reveal delay={0.15}>
+          <p className="mt-4 text-lg text-secondary">
+            The name is deliberate: Zagros is a mountain <em>range</em>, not a
+            single peak — a continuous system of separate summits. Three
+            practices, one range.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,0 +1,946 @@
+<title>Zagros Dataware Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #f8fafc;
+    --paper-raised: #ffffff;
+    --line: #d8e0e8;
+    --ink: #0d233a;
+    --ink-soft: #4a5568;
+    --range: #0d233a;
+    --range-light: #1e3a5f;
+    --summit: #10b981;
+    --summit-dark: #059669;
+    --ridge: #6366f1;
+    --ridge-dark: #4f46e5;
+    --ember: #f59e0b;
+    --ember-dark: #d97706;
+    --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    --font-body: "Inter", -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; }
+  ::selection { background: var(--summit); color: white; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- shell / rail ---------- */
+  .shell {
+    display: grid;
+    grid-template-columns: 236px minmax(0, 1fr);
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  @media (max-width: 880px) {
+    .shell { grid-template-columns: 1fr; }
+    .rail { display: none; }
+  }
+
+  .rail {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 40px 20px 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border-right: 1px solid var(--line);
+  }
+  .rail-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .rail-brand svg { width: 30px; height: 22px; flex-shrink: 0; }
+  .rail-brand span {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+  }
+  .rail nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow-y: auto;
+  }
+  .rail nav a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    padding: 7px 10px;
+    border-radius: 6px;
+    border-left: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .rail nav a span.num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    opacity: 0.55;
+    margin-right: 7px;
+  }
+  .rail nav a:hover { color: var(--ink); background: color-mix(in srgb, var(--summit) 8%, transparent); }
+  .rail nav a.active {
+    color: var(--ink);
+    border-left-color: var(--summit);
+    background: color-mix(in srgb, var(--summit) 10%, transparent);
+    font-weight: 600;
+  }
+  .rail-foot {
+    margin-top: auto;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    line-height: 1.5;
+  }
+
+  main { min-width: 0; }
+
+  section {
+    padding: 88px clamp(24px, 5vw, 72px);
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .section-head .num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--summit-dark);
+  }
+  .section-head h2 {
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+  }
+
+  .prose { max-width: 62ch; }
+  .prose p + p { margin-top: 1em; }
+  .lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 66ch; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    background: linear-gradient(180deg, var(--range) 0%, #132c47 100%);
+    color: white;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: 96px clamp(24px, 5vw, 72px) 80px;
+  }
+  .hero .eyebrow { color: rgba(255,255,255,0.65); }
+  .hero-mantra {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--summit);
+    margin-top: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    font-weight: 900;
+    line-height: 0.98;
+    margin-top: 14px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em { font-style: normal; color: var(--summit); }
+  .hero-sub {
+    margin-top: 26px;
+    max-width: 58ch;
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.78);
+  }
+  .contours {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.16;
+  }
+  .peaks-hero {
+    position: absolute;
+    right: -40px;
+    bottom: -20px;
+    width: min(46vw, 620px);
+    height: auto;
+    z-index: 1;
+    opacity: 0.9;
+  }
+
+  /* ---------- generic components ---------- */
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 720px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); font-weight: 500; }
+  .table-wrap { overflow-x: auto; }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--summit) 12%, transparent);
+    color: var(--summit-dark);
+  }
+
+  /* do/don't */
+  .voice-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 720px) { .voice-pair { grid-template-columns: 1fr; } }
+  .voice-card { border-radius: 10px; padding: 22px 24px; border: 1px solid var(--line); }
+  .voice-card.do { border-left: 3px solid var(--summit); }
+  .voice-card.dont { border-left: 3px solid #cbd5e1; }
+  .voice-card .label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; display: block; }
+  .voice-card.do .label { color: var(--summit-dark); }
+  .voice-card.dont .label { color: var(--ink-soft); }
+  .voice-card q { font-style: normal; display: block; margin: 0; }
+
+  /* logo section */
+  .logo-stage {
+    background: var(--range);
+    border-radius: 12px;
+    padding: 56px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .logo-stage.light { background: var(--paper-raised); border: 1px solid var(--line); }
+  .logo-full { display: flex; align-items: center; gap: 18px; }
+  .logo-full svg.mark { width: 64px; height: 48px; }
+  .logo-wordmark { display: flex; flex-direction: column; line-height: 0.92; }
+  .logo-wordmark .top { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; letter-spacing: 0.01em; }
+  .logo-wordmark .bottom { font-family: var(--font-display); font-weight: 500; font-size: 1.9rem; letter-spacing: 0.06em; opacity: 0.8; }
+  .on-dark .logo-wordmark { color: white; }
+  .on-light .logo-wordmark { color: var(--ink); }
+
+  .lockup-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+  @media (max-width: 900px) { .lockup-grid { grid-template-columns: repeat(2, 1fr); } }
+  .lockup-tile {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    background: var(--paper-raised);
+  }
+  .lockup-tile .swatch-bg { width: 100%; height: 78px; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+  .lockup-tile figcaption { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); text-align: center; }
+  .lockup-tile svg { height: 34px; width: auto; }
+
+  .clearspace-demo {
+    position: relative;
+    width: fit-content;
+    margin: 32px auto 0;
+    padding: 34px;
+    border: 1px dashed color-mix(in srgb, var(--summit) 60%, transparent);
+  }
+  .clearspace-demo svg { width: 90px; height: 68px; display: block; }
+  .clearspace-demo .dim {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--summit-dark);
+  }
+  .clearspace-demo .dim.top { top: 6px; left: 50%; transform: translateX(-50%); }
+  .clearspace-demo .dim.left { left: 6px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+
+  .misuse-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 20px; }
+  @media (max-width: 900px) { .misuse-grid { grid-template-columns: repeat(2, 1fr); } }
+  .misuse-tile {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    background: var(--paper-raised);
+    position: relative;
+  }
+  .misuse-tile svg { height: 32px; width: auto; margin-bottom: 10px; }
+  .misuse-tile .x {
+    position: absolute; top: 10px; right: 10px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #fee2e2; color: #dc2626;
+    font-size: 0.7rem; display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+  }
+  .misuse-tile p { font-size: 0.74rem; color: var(--ink-soft); margin-top: 6px; }
+
+  /* color system */
+  .swatch-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+  .swatch {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+  }
+  .swatch .fill { height: 84px; }
+  .swatch .meta { padding: 12px 14px; }
+  .swatch .name { font-weight: 600; font-size: 0.88rem; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); margin-top: 2px; }
+  .swatch .use { font-size: 0.76rem; color: var(--ink-soft); margin-top: 8px; line-height: 1.4; }
+
+  /* type specimen */
+  .type-row { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); padding: 22px 0; flex-wrap: wrap; }
+  .type-row:first-of-type { padding-top: 0; }
+  .type-row .role { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; width: 130px; flex-shrink: 0; }
+  .type-sample.display { font-family: var(--font-display); font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.6rem); }
+  .type-sample.display-sub { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; }
+  .type-sample.body { font-family: var(--font-body); font-size: 1.02rem; max-width: 54ch; color: var(--ink-soft); }
+  .type-sample.mono { font-family: var(--font-mono); font-size: 0.92rem; color: var(--ink-soft); }
+
+  /* imagery */
+  .imagery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 780px) { .imagery-grid { grid-template-columns: 1fr; } }
+  .imagery-tile svg { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); background: var(--paper-raised); }
+  .imagery-tile p { font-size: 0.8rem; color: var(--ink-soft); margin-top: 10px; }
+
+  /* applications */
+  .app-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: start; }
+  @media (max-width: 780px) { .app-grid { grid-template-columns: 1fr; } }
+  .biz-card {
+    aspect-ratio: 1.75 / 1;
+    border-radius: 12px;
+    background: var(--range);
+    color: white;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 18px 40px -18px rgba(13,35,58,0.45);
+  }
+  .biz-card .top-row { display: flex; align-items: center; gap: 10px; }
+  .biz-card svg { width: 26px; height: 20px; }
+  .biz-card .bc-name { font-family: var(--font-display); font-weight: 800; font-size: 0.92rem; letter-spacing: 0.02em; }
+  .biz-card .bc-person { font-size: 0.88rem; font-weight: 600; }
+  .biz-card .bc-role { font-family: var(--font-mono); font-size: 0.68rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+  .biz-card .bc-contact { font-family: var(--font-mono); font-size: 0.7rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  .avatar-row { display: flex; gap: 16px; margin-top: 20px; }
+  .avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--range);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .avatar svg { width: 30px; height: 22px; }
+  .avatar.sq { border-radius: 14px; }
+
+  .sig-block {
+    border-top: 2px solid var(--ink);
+    padding-top: 12px;
+    margin-top: 16px;
+    font-size: 0.86rem;
+  }
+  .sig-block .sig-name { font-weight: 700; }
+  .sig-block .sig-role { color: var(--ink-soft); font-size: 0.8rem; }
+  .sig-block .sig-mantra { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--summit-dark); margin-top: 8px; }
+
+  /* strategy matrix */
+  .matrix td .chan { display: block; font-size: 0.86rem; margin-bottom: 4px; }
+  .matrix td .chan b { color: var(--ink); }
+  .track-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+
+  /* checklist */
+  .checklist { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .checklist li { list-style: none; display: flex; gap: 12px; align-items: flex-start; }
+  .checklist .box { width: 18px; height: 18px; border: 1.5px solid var(--ink-soft); border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+  .checklist p { font-size: 0.94rem; }
+  .checklist .tag-priority { margin-left: 8px; }
+
+  footer.book-end {
+    padding: 56px clamp(24px, 5vw, 72px) 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer.book-end .eyebrow { color: var(--ink-soft); }
+</style>
+
+<!-- ============================================================ -->
+<!-- SVG SYMBOL DEFS (reused mark, referenced via <use>) -->
+<!-- ============================================================ -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="mark-mono" viewBox="0 0 168 108">
+    <polygon points="8,100 30,50 52,100" fill="currentColor"/>
+    <polygon points="50,100 80,18 112,100" fill="currentColor"/>
+    <polygon points="102,100 132,42 160,100" fill="currentColor"/>
+  </symbol>
+  <symbol id="mark-tri" viewBox="0 0 168 108">
+    <polygon points="8,100 30,50 52,100" fill="var(--range)"/>
+    <polygon points="50,100 80,18 112,100" fill="var(--ridge)"/>
+    <polygon points="102,100 132,42 160,100" fill="var(--ember)"/>
+  </symbol>
+</svg>
+
+<div class="shell">
+
+  <!-- ============================================================ -->
+  <!-- RAIL -->
+  <!-- ============================================================ -->
+  <aside class="rail">
+    <div class="rail-brand">
+      <svg viewBox="0 0 168 108" style="color:var(--range)"><use href="#mark-mono"/></svg>
+      <span>ZAGROS&nbsp;DATAWARE</span>
+    </div>
+    <nav id="rail-nav">
+      <a href="#exec"><span class="num">00</span>Executive Summary</a>
+      <a href="#positioning"><span class="num">01</span>Positioning</a>
+      <a href="#voice"><span class="num">02</span>Voice &amp; Tone</a>
+      <a href="#verbal"><span class="num">03</span>Verbal Identity</a>
+      <a href="#logo"><span class="num">04</span>Logo System</a>
+      <a href="#color"><span class="num">05</span>Color System</a>
+      <a href="#type"><span class="num">06</span>Typography</a>
+      <a href="#imagery"><span class="num">07</span>Imagery Style</a>
+      <a href="#applications"><span class="num">08</span>Applications</a>
+      <a href="#strategy"><span class="num">09</span>Marketing Strategy</a>
+      <a href="#checklist"><span class="num">10</span>Implementation</a>
+    </nav>
+    <div class="rail-foot">DRAFT V1<br/>PREPARED FOR INTERNAL REVIEW</div>
+  </aside>
+
+  <!-- ============================================================ -->
+  <!-- MAIN -->
+  <!-- ============================================================ -->
+  <main>
+
+    <!-- ---------------- HERO ---------------- -->
+    <section class="hero" id="exec-top">
+      <svg class="contours" viewBox="0 0 1000 500" preserveAspectRatio="none">
+        <path d="M0,420 Q250,380 500,420 T1000,410" stroke="white" stroke-width="1" fill="none"/>
+        <path d="M0,450 Q250,410 500,450 T1000,440" stroke="white" stroke-width="1" fill="none"/>
+        <path d="M0,480 Q250,440 500,480 T1000,470" stroke="white" stroke-width="1" fill="none"/>
+      </svg>
+      <svg class="peaks-hero" viewBox="0 0 168 108"><use href="#mark-mono" style="color:white"/></svg>
+      <div class="hero-inner">
+        <span class="eyebrow">Brand Book — Draft v1</span>
+        <div class="hero-mantra">Evidence Over Guesswork</div>
+        <h1>One range.<br/>Three peaks. <em>One name.</em></h1>
+        <p class="hero-sub">A positioning, identity, and marketing proposal for Zagros Dataware — built around the one thing the current brand already has and doesn't yet use: the name means a mountain <em style="font-style:normal;color:var(--summit)">range</em>, not a single peak.</p>
+      </div>
+    </section>
+
+    <!-- ---------------- 00 EXECUTIVE SUMMARY ---------------- -->
+    <section id="exec">
+      <div class="section-head"><span class="num">00</span><h2>Executive Summary</h2></div>
+      <div class="prose">
+        <p class="lede">The hardest part of a brand — a name that means something — is already sitting there unused. This book proposes spending it.</p>
+        <p>Zagros Dataware runs three distinct practices under one name: enterprise process discipline (BPM, BABOK, ERP), startup validation speed (Lean Startup, Design Sprints, Design Thinking), and process-minded web design for local business. The current identity doesn't say so. The logo is a single decorative peak buried under generic circuit-board ornamentation — the kind that appears on thousands of unrelated "IT consultancy" logos and communicates nothing specific to this business. The tagline names two of the three practices and is silent on the third. There's no short verbal line visitors actually remember and repeat.</p>
+        <p>The fix isn't a rebrand from zero — it's a tightening. <b>Zagros</b> is a real mountain <i>range</i>: a continuous system of separate, named peaks. That is a more accurate description of this business than anything currently on the website. This book proposes a simplified three-peak mark that encodes the three-practice structure instead of decorating it, a verbal system built around a line already living quietly in the site's own copy — <q>evidence over guesswork</q> — and a channel-by-channel marketing plan that puts the content library already built to work, rather than starting over.</p>
+      </div>
+    </section>
+
+    <!-- ---------------- 01 POSITIONING ---------------- -->
+    <section id="positioning">
+      <div class="section-head"><span class="num">01</span><h2>Positioning</h2></div>
+      <div class="grid-2">
+        <div>
+          <span class="eyebrow">Positioning statement</span>
+          <p style="font-size:1.2rem; margin-top:12px; line-height:1.5;">For founders, enterprise operators, and local business owners making decisions on opinion instead of evidence — Zagros Dataware is the process and design consultancy that applies the <b>right discipline at the right speed</b>: BPM and BABOK rigor where structure protects you, Lean Startup and Design Sprint speed where validation saves you, process-minded web design where a clearer path to "buy" is the whole game.</p>
+        </div>
+        <div class="prose">
+          <span class="eyebrow">Why "Zagros"</span>
+          <p style="margin-top:12px;">The Zagros range runs over 1,500km across Iran and the South Caucasus — dozens of named peaks, one continuous system. Not <i>a</i> mountain: a range. That distinction is the brand's real asset. Recommend telling this story once, briefly, on the About page — it does more positioning work than another paragraph of service description.</p>
+          <span class="eyebrow" style="display:block; margin-top:22px;">Brand personality</span>
+          <p style="margin-top:10px;">Rigorous. Plainspoken. Unshowy. Evidence-led. Sage/Expert archetype, with a trace of the Architect — structure is the product, not just the process to get there.</p>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top:44px;">
+        <div class="card" style="border-top:3px solid var(--range)">
+          <span class="tag" style="background:color-mix(in srgb, var(--range) 12%, transparent); color:var(--range)">Enterprise</span>
+          <p style="margin-top:12px; font-weight:600;">Institutional-grade process discipline, engineered for scale.</p>
+          <p style="margin-top:8px; font-size:0.88rem; color:var(--ink-soft);">Audience distrusts anything that looks improvised. Every claim needs a source.</p>
+        </div>
+        <div class="card" style="border-top:3px solid var(--ridge)">
+          <span class="tag" style="background:color-mix(in srgb, var(--ridge) 14%, transparent); color:var(--ridge-dark)">Startups</span>
+          <p style="margin-top:12px; font-weight:600;">Validate faster, build the right thing, de-risk the bet.</p>
+          <p style="margin-top:8px; font-size:0.88rem; color:var(--ink-soft);">Audience distrusts anything that looks slow. Every claim needs a clock.</p>
+        </div>
+        <div class="card" style="border-top:3px solid var(--ember)">
+          <span class="tag" style="background:color-mix(in srgb, var(--ember) 16%, transparent); color:var(--ember-dark)">Web Design</span>
+          <p style="margin-top:12px; font-weight:600;">Get your business found, trusted, and bought from — online.</p>
+          <p style="margin-top:8px; font-size:0.88rem; color:var(--ink-soft);">Audience distrusts anything that looks expensive. Every claim needs a plain-English payoff.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- 02 VOICE & TONE ---------------- -->
+    <section id="voice">
+      <div class="section-head"><span class="num">02</span><h2>Voice &amp; Tone</h2></div>
+      <p class="lede">Not invented for this book — this is already how the site's blog and resource library are written. Codifying it here so it stays consistent as more people write for the brand.</p>
+
+      <div class="voice-pair" style="margin-top:36px;">
+        <div class="voice-card do">
+          <span class="label">Do — name the mistake plainly</span>
+          <q>The mistake we see most often isn't picking the wrong methodology — it's picking one and refusing to borrow from the other.</q>
+        </div>
+        <div class="voice-card dont">
+          <span class="label">Don't — reach for consulting fog</span>
+          <q>We empower organizations to unlock synergistic transformation journeys.</q>
+        </div>
+        <div class="voice-card do">
+          <span class="label">Do — give a real diagnostic question</span>
+          <q>What would happen if this took six more months to finish properly? If the answer involves a regulator or an audit, map it properly first.</q>
+        </div>
+        <div class="voice-card dont">
+          <span class="label">Don't — hide behind vague superlatives</span>
+          <q>Our best-in-class methodology delivers unparalleled results for forward-thinking organizations.</q>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top:40px;">
+        <div>
+          <span class="eyebrow">Sentence length</span>
+          <p style="margin-top:8px; font-size:0.92rem;">Vary it on purpose. A short sentence after two long ones lands like a verdict.</p>
+        </div>
+        <div>
+          <span class="eyebrow">Certainty</span>
+          <p style="margin-top:8px; font-size:0.92rem;">Say "typically" and "in engagements of this shape" for patterns; never dress a pattern up as a guarantee.</p>
+        </div>
+        <div>
+          <span class="eyebrow">Banned words</span>
+          <p style="margin-top:8px; font-size:0.92rem;">Synergy, leverage (as a verb), holistic, cutting-edge, world-class, seamless, unlock, empower, journey.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- 03 VERBAL IDENTITY ---------------- -->
+    <section id="verbal">
+      <div class="section-head"><span class="num">03</span><h2>Verbal Identity</h2></div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="eyebrow">Brand mantra — new</span>
+          <h3 style="font-size:1.7rem; margin-top:10px;">"Evidence Over Guesswork."</h3>
+          <p style="margin-top:12px; font-size:0.9rem; color:var(--ink-soft);">Short enough for a footer, a favicon hover, a business card. Already appears, almost verbatim, in the live site's own "Three Practices" copy — this promotes it from a passing line to the brand's short-form identity, used everywhere the full tagline is too long.</p>
+        </div>
+        <div class="card">
+          <span class="eyebrow">Master tagline — keep as-is</span>
+          <h3 style="font-size:1.7rem; margin-top:10px;">"Process Discipline for Enterprises. Speed for Startups."</h3>
+          <p style="margin-top:12px; font-size:0.9rem; color:var(--ink-soft);">Strong on contrast and already doing real work in the hero. Recommend leaving it exactly as-is rather than forcing the third practice into the same sentence — a tagline that tries to name all three tracks stops being a tagline. Let the track pages carry Web Design's line instead.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap" style="margin-top:28px;">
+        <table>
+          <thead><tr><th>Practice</th><th>Sub-line</th><th style="width:220px;">Where it's used</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="track-dot" style="background:var(--range)"></span>Enterprise</td>
+              <td>Institutional-grade process discipline, engineered for scale.</td>
+              <td>/enterprise hero</td>
+            </tr>
+            <tr>
+              <td><span class="track-dot" style="background:var(--ridge)"></span>Startups</td>
+              <td>Validate faster, build the right thing, de-risk the bet.</td>
+              <td>/startups hero</td>
+            </tr>
+            <tr>
+              <td><span class="track-dot" style="background:var(--ember)"></span>Web Design</td>
+              <td>Get your business found, trusted, and bought from — online.</td>
+              <td>/web-design hero</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ---------------- 04 LOGO SYSTEM ---------------- -->
+    <section id="logo">
+      <div class="section-head"><span class="num">04</span><h2>Logo System</h2></div>
+      <p class="lede">The current mark keeps a mountain silhouette layered under circuit-board ornamentation and a baked-in raster tagline — it doesn't survive a 32px favicon, and the fine detail reads as generic stock-icon rather than specific to this business. The rest of this brand is asking the mark to do one job: <b>be legibly three peaks</b>, so the practice structure is in the logo, not just explained next to it.</p>
+
+      <div class="logo-stage on-dark" style="margin-top:36px;">
+        <div class="logo-full">
+          <svg class="mark" viewBox="0 0 168 108" style="color:var(--summit)"><use href="#mark-mono"/></svg>
+          <div class="logo-wordmark">
+            <span class="top">ZAGROS</span>
+            <span class="bottom">DATAWARE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lockup-grid">
+        <figure class="lockup-tile">
+          <div class="swatch-bg" style="background:var(--range)"><svg viewBox="0 0 168 108" style="color:white"><use href="#mark-mono"/></svg></div>
+          <figcaption>ICON — REVERSED<br/>favicon / app icon / avatar</figcaption>
+        </figure>
+        <figure class="lockup-tile">
+          <div class="swatch-bg" style="background:var(--paper)"><svg viewBox="0 0 168 108" style="color:var(--range)"><use href="#mark-mono"/></svg></div>
+          <figcaption>ICON — MONO<br/>light backgrounds, print</figcaption>
+        </figure>
+        <figure class="lockup-tile">
+          <div class="swatch-bg" style="background:var(--paper)"><svg viewBox="0 0 168 108"><use href="#mark-tri"/></svg></div>
+          <figcaption>ICON — PRACTICE COLORS<br/>special use only, see below</figcaption>
+        </figure>
+        <figure class="lockup-tile">
+          <div class="swatch-bg" style="background:var(--range); display:flex; flex-direction:column; gap:6px;">
+            <svg viewBox="0 0 168 108" style="color:white; height:30px; width:auto;"><use href="#mark-mono"/></svg>
+            <div style="font-family:var(--font-display); font-weight:800; color:white; font-size:0.68rem; letter-spacing:0.04em;">ZAGROS DATAWARE</div>
+          </div>
+          <figcaption>STACKED LOCKUP<br/>square-format placements</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid-2" style="margin-top:52px; align-items:start;">
+        <div>
+          <span class="eyebrow">Clear space &amp; minimum size</span>
+          <div class="clearspace-demo">
+            <span class="dim top">≥ X</span>
+            <span class="dim left">≥ X</span>
+            <svg viewBox="0 0 168 108" style="color:var(--range)"><use href="#mark-mono"/></svg>
+          </div>
+          <p style="text-align:center; font-size:0.8rem; color:var(--ink-soft); margin-top:14px;">X = the height of the middle peak. Keep at least one X of clear space on every side. Never render the icon mark below 20px — below that, use the wordmark alone.</p>
+        </div>
+        <div>
+          <span class="eyebrow">Usage rule</span>
+          <p style="margin-top:10px; font-size:0.92rem;">The <b>mono mark</b> (navy or reversed white) is the default, everywhere — header, favicon, business card, contracts. The <b>tri-color mark</b> is a special expression for moments that are specifically about all three practices at once — the about page, this book's cover, a pitch deck's closing slide. Using it everywhere would dilute it into decoration.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:52px;">
+        <span class="eyebrow">Misuse</span>
+        <div class="misuse-grid">
+          <div class="misuse-tile">
+            <svg viewBox="0 0 168 108" style="color:var(--range); transform:scaleX(-1);"><use href="#mark-mono"/></svg>
+            <span class="x">✕</span>
+            <p>Don't mirror or rotate the mark.</p>
+          </div>
+          <div class="misuse-tile">
+            <svg viewBox="0 0 168 108" style="color:var(--ember);"><use href="#mark-mono"/></svg>
+            <span class="x">✕</span>
+            <p>Don't recolor the mono mark to a single non-brand color.</p>
+          </div>
+          <div class="misuse-tile" style="background:linear-gradient(135deg,#f472b6,#60a5fa);">
+            <svg viewBox="0 0 168 108" style="color:white;"><use href="#mark-mono"/></svg>
+            <span class="x">✕</span>
+            <p>Don't place on a gradient or busy background.</p>
+          </div>
+          <div class="misuse-tile">
+            <svg viewBox="0 0 168 108" style="color:var(--range); filter:drop-shadow(3px 4px 2px rgba(0,0,0,0.4));"><use href="#mark-mono"/></svg>
+            <span class="x">✕</span>
+            <p>Don't add drop shadows, bevels, or outlines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- 05 COLOR SYSTEM ---------------- -->
+    <section id="color">
+      <div class="section-head"><span class="num">05</span><h2>Color System</h2></div>
+      <p class="lede">The site's existing palette is sound — it already assigns a distinct accent to each practice. This book formalizes the usage rules rather than replacing the colors.</p>
+
+      <span class="eyebrow" style="display:block; margin-top:32px;">Core</span>
+      <div class="swatch-row" style="margin-top:14px;">
+        <div class="swatch">
+          <div class="fill" style="background:var(--range)"></div>
+          <div class="meta"><div class="name">Range</div><div class="hex">#0D233A</div><div class="use">Primary — text, header, footer, default logo color.</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--range-light)"></div>
+          <div class="meta"><div class="name">Range Light</div><div class="hex">#1E3A5F</div><div class="use">Gradients and hover states off Range.</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--summit)"></div>
+          <div class="meta"><div class="name">Summit</div><div class="hex">#10B981</div><div class="use">Primary CTA, links, brand mantra accent.</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--ink-soft)"></div>
+          <div class="meta"><div class="name">Stone</div><div class="hex">#4A5568</div><div class="use">Secondary text, captions.</div></div>
+        </div>
+      </div>
+
+      <span class="eyebrow" style="display:block; margin-top:32px;">Practice accents — one per track, own page only</span>
+      <div class="swatch-row" style="margin-top:14px;">
+        <div class="swatch">
+          <div class="fill" style="background:var(--range)"></div>
+          <div class="meta"><div class="name">Enterprise</div><div class="hex">reuses Range / Summit</div><div class="use">No separate accent — enterprise <i>is</i> the core brand color.</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--ridge)"></div>
+          <div class="meta"><div class="name">Ridge</div><div class="hex">#6366F1</div><div class="use">Startups track only — badges, links, icons on /startups.</div></div>
+        </div>
+        <div class="swatch">
+          <div class="fill" style="background:var(--ember)"></div>
+          <div class="meta"><div class="name">Ember</div><div class="hex">#F59E0B</div><div class="use">Web Design track only — badges, links, icons on /web-design.</div></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:32px;">
+        <span class="eyebrow">Contrast notes</span>
+        <p style="margin-top:10px; font-size:0.9rem; color:var(--ink-soft);">Range on Paper and white text on Range both pass AA comfortably at any size — use freely for body copy and headers. Summit, Ridge, and Ember all pass AA for large or bold text and for icons/UI components on white, but none of the three should carry small (&lt;16px, regular-weight) body text — pair them with Range or Stone for anything a visitor needs to actually read.</p>
+      </div>
+    </section>
+
+    <!-- ---------------- 06 TYPOGRAPHY ---------------- -->
+    <section id="type">
+      <div class="section-head"><span class="num">06</span><h2>Typography</h2></div>
+      <p class="lede">Three roles, three faces — display for conviction, body for reading, mono for anything that's data.</p>
+
+      <div style="margin-top:36px;">
+        <div class="type-row">
+          <span class="role">Display</span>
+          <div><div class="type-sample display">Zagros Dataware</div><div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); margin-top:6px;">Big Shoulders Display · 800/900 · headlines, section numbers, wordmark</div></div>
+        </div>
+        <div class="type-row">
+          <span class="role">Display Sub</span>
+          <div><div class="type-sample display-sub">Institutional-grade process discipline, engineered for scale.</div><div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); margin-top:6px;">Big Shoulders Display · 700 · sub-heads, track taglines</div></div>
+        </div>
+        <div class="type-row">
+          <span class="role">Body</span>
+          <div><p class="type-sample body">The mistake we see most often isn't picking the wrong methodology — it's picking one and refusing to borrow from the other.</p><div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); margin-top:6px;">Inter · 400/500/600 · already the live site's body face</div></div>
+        </div>
+        <div class="type-row">
+          <span class="role">Mono / Data</span>
+          <div><p class="type-sample mono">#10B981 · BABOK · ISO 9001:2015 · 99.2% on-time</p><div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-soft); margin-top:6px;">IBM Plex Mono · 400/500 · hex codes, stats, tags, captions</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- 07 IMAGERY STYLE ---------------- -->
+    <section id="imagery">
+      <div class="section-head"><span class="num">07</span><h2>Imagery Style</h2></div>
+      <p class="lede">No stock photography, no fabricated people or offices. The site already draws its own flat, geometric illustrations for process flows and site mockups — this book codifies that as a deliberate rule, not a placeholder.</p>
+
+      <div class="imagery-grid" style="margin-top:32px;">
+        <div class="imagery-tile">
+          <svg viewBox="0 0 220 140">
+            <rect width="220" height="140" fill="var(--paper)"/>
+            <circle cx="40" cy="40" r="10" fill="var(--range)"/>
+            <circle cx="110" cy="40" r="10" fill="var(--range)"/>
+            <circle cx="180" cy="40" r="10" fill="var(--summit)"/>
+            <path d="M50,40 H100 M120,40 H170" stroke="var(--ink-soft)" stroke-width="2" stroke-dasharray="4 4"/>
+            <rect x="20" y="90" width="180" height="10" rx="5" fill="var(--line)"/>
+            <rect x="20" y="90" width="120" height="10" rx="5" fill="var(--summit)"/>
+          </svg>
+          <p><b>Process diagrams</b> — nodes, dashed flow lines, one accent color per state.</p>
+        </div>
+        <div class="imagery-tile">
+          <svg viewBox="0 0 220 140">
+            <rect width="220" height="140" fill="var(--paper)"/>
+            <rect x="20" y="24" width="180" height="96" rx="8" fill="white" stroke="var(--line)"/>
+            <rect x="20" y="24" width="180" height="18" rx="8" fill="var(--paper)"/>
+            <circle cx="34" cy="33" r="3" fill="var(--ember)"/>
+            <circle cx="44" cy="33" r="3" fill="var(--ember)"/>
+            <rect x="36" y="56" width="60" height="44" rx="4" fill="var(--ember)" opacity="0.15"/>
+            <rect x="104" y="56" width="60" height="44" rx="4" fill="var(--ember)" opacity="0.15"/>
+            <rect x="36" y="104" width="40" height="6" rx="3" fill="var(--ember)"/>
+          </svg>
+          <p><b>Browser mockups</b> — abstract site previews standing in for real screenshots when none exist.</p>
+        </div>
+        <div class="imagery-tile">
+          <svg viewBox="0 0 220 140">
+            <rect width="220" height="140" fill="var(--paper)"/>
+            <polygon points="30,110 60,60 90,110" fill="var(--range)"/>
+            <polygon points="80,110 115,40 150,110" fill="var(--ridge)"/>
+            <polygon points="140,110 165,66 190,110" fill="var(--ember)"/>
+          </svg>
+          <p><b>The mark itself</b> — reused as a section divider or background motif at low opacity, never as clip-art scenery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- 08 APPLICATIONS ---------------- -->
+    <section id="applications">
+      <div class="section-head"><span class="num">08</span><h2>Applications</h2></div>
+      <div class="app-grid">
+        <div>
+          <span class="eyebrow">Business card</span>
+          <div class="biz-card" style="margin-top:14px;">
+            <div class="top-row">
+              <svg viewBox="0 0 168 108" style="color:var(--summit)"><use href="#mark-mono"/></svg>
+              <span class="bc-name">ZAGROS DATAWARE</span>
+            </div>
+            <div>
+              <div class="bc-person">Ali Honarmand</div>
+              <div class="bc-role">Founder — Enterprise · Startup · Web Design</div>
+            </div>
+            <div class="bc-contact">honarmand.ali.ha@gmail.com<br/>zagros-dataware.github.io · Yerevan, AM</div>
+          </div>
+
+          <span class="eyebrow" style="display:block; margin-top:28px;">Avatars &amp; icons</span>
+          <div class="avatar-row">
+            <div class="avatar"><svg viewBox="0 0 168 108" style="color:var(--summit)"><use href="#mark-mono"/></svg></div>
+            <div class="avatar sq"><svg viewBox="0 0 168 108" style="color:white"><use href="#mark-mono"/></svg></div>
+            <div class="avatar" style="background:white; border:1px solid var(--line);"><svg viewBox="0 0 168 108" style="color:var(--range)"><use href="#mark-mono"/></svg></div>
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow">Email signature</span>
+          <div class="card" style="margin-top:14px;">
+            <div style="display:flex; gap:14px; align-items:center;">
+              <svg viewBox="0 0 168 108" style="width:38px; height:28px; color:var(--range)"><use href="#mark-mono"/></svg>
+              <div class="sig-block" style="border-top:none; padding-top:0; margin-top:0;">
+                <div class="sig-name">Ali Honarmand</div>
+                <div class="sig-role">Zagros Dataware — Enterprise Process, Startup Enablement &amp; Web Design</div>
+                <div class="sig-mantra">Evidence Over Guesswork</div>
+              </div>
+            </div>
+          </div>
+
+          <span class="eyebrow" style="display:block; margin-top:28px;">Proposal / document header</span>
+          <div class="card" style="margin-top:14px; background:var(--range); border:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <svg viewBox="0 0 168 108" style="width:34px; height:26px; color:white"><use href="#mark-mono"/></svg>
+              <span style="font-family:var(--font-mono); font-size:0.68rem; color:rgba(255,255,255,0.65);">PROPOSAL · 2026</span>
+            </div>
+            <div style="font-family:var(--font-display); font-weight:800; color:white; font-size:1.1rem; margin-top:14px;">Process Audit — [Client Name]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- 09 MARKETING STRATEGY ---------------- -->
+    <section id="strategy">
+      <div class="section-head"><span class="num">09</span><h2>Marketing Strategy</h2></div>
+      <p class="lede">Three audiences, three buying behaviors. One content engine — the blog and resource library already built — feeding all three, instead of three separate efforts.</p>
+
+      <div class="table-wrap" style="margin-top:32px;">
+        <table class="matrix">
+          <thead><tr><th style="width:140px;">Practice</th><th>Primary channels</th><th>Content that works</th><th>Proof</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="track-dot" style="background:var(--range)"></span><b>Enterprise</b></td>
+              <td>
+                <span class="chan"><b>LinkedIn</b> thought leadership</span>
+                <span class="chan"><b>Direct outreach</b> to ops/IT leadership</span>
+                <span class="chan">RFP responses citing BABOK/BPM credentials</span>
+              </td>
+              <td>Long-form technical docs (BABOK templates, BPM-vs-ERP frameworks) — these are the actual sales asset, not just SEO content.</td>
+              <td>Written case narratives; request references from Van Arm Line / Van Pro Co once relationships allow.</td>
+            </tr>
+            <tr>
+              <td><span class="track-dot" style="background:var(--ridge)"></span><b>Startups</b></td>
+              <td>
+                <span class="chan">Founder communities &amp; local incubators</span>
+                <span class="chan">A free/low-cost intro Design Sprint as a lead-gen offer</span>
+                <span class="chan">Blog + LinkedIn repurposing</span>
+              </td>
+              <td>Illustrative use-case walkthroughs (already written) — show the method, not just describe it.</td>
+              <td>A public log of sprints run (topic + format, anonymized if needed) builds a track record fast.</td>
+            </tr>
+            <tr>
+              <td><span class="track-dot" style="background:var(--ember)"></span><b>Web Design</b></td>
+              <td>
+                <span class="chan">Local SEO / Google Business Profile</span>
+                <span class="chan">Referral network — accountants, business associations</span>
+                <span class="chan">Portfolio-led — the "Selected Work" section is the pitch</span>
+              </td>
+              <td>Before/after framing once more real projects exist; keep the illustrative use cases as method explainers, not proof.</td>
+              <td>Live links (Van Arm Line, Van Pro Co, The Grizzly) — strongest proof asset the brand currently has.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2" style="margin-top:40px;">
+        <div>
+          <span class="eyebrow">Content engine</span>
+          <p style="margin-top:10px; font-size:0.92rem;">Keep publishing on the existing blog/resource cadence. Every long-form post gets a repurposed LinkedIn version; every illustrative use case follows the same template (starting point → mapping → redesign → typical result) so the format itself becomes recognizable.</p>
+        </div>
+        <div>
+          <span class="eyebrow">Near-term gaps</span>
+          <p style="margin-top:10px; font-size:0.92rem;">No lead-capture beyond a mailto link; no testimonials yet from delivered projects; no downloadable/gated version of the technical docs (a natural email-capture lead magnet once there's a list to build).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- 10 IMPLEMENTATION CHECKLIST ---------------- -->
+    <section id="checklist">
+      <div class="section-head"><span class="num">10</span><h2>Implementation Checklist</h2></div>
+      <p class="lede">What would actually change on the live site if this direction is approved. Nothing here has been built yet — say the word and I'll implement whichever of these you want.</p>
+
+      <ul class="checklist" style="margin-top:28px;">
+        <li><div class="box"></div><p><b>Replace the logo file</b> with the new three-peak mark (SVG master + exported PNG/favicon sizes) — removes the circuit ornamentation and baked-in tagline text.<span class="tag tag-priority">high impact</span></p></li>
+        <li><div class="box"></div><p><b>Swap the hero eyebrow</b> from the generic "IT Products · Consultancy · Process & Product Design" descriptor to the mantra, <q>Evidence Over Guesswork.</q><span class="tag tag-priority">low effort</span></p></li>
+        <li><div class="box"></div><p><b>Keep</b> the master tagline, the three track sub-lines, and the entire existing color system exactly as they are — all validated by this review, no code changes needed.</p></li>
+        <li><div class="box"></div><p><b>Add the name story</b> — two or three sentences on the About section explaining "Zagros" as a range, not a peak.<span class="tag tag-priority">low effort</span></p></li>
+        <li><div class="box"></div><p><b>Regenerate the favicon</b> from the icon-only mark so it actually reads at 16–32px, unlike the current cropped photo-logo.<span class="tag tag-priority">high impact</span></p></li>
+        <li><div class="box"></div><p><b>Build a one-page PDF/print version</b> of this book's applications section (business card, email signature, proposal header) once the mark is finalized.</p></li>
+      </ul>
+    </section>
+
+    <footer class="book-end">
+      <span class="eyebrow">Zagros Dataware — Brand Book — Draft v1</span>
+      <div class="hero-mantra" style="margin-top:0; color:var(--summit-dark);">Evidence Over Guesswork</div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('#rail-nav a'));
+    var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+    if (!targets.length || !('IntersectionObserver' in window)) return;
+
+    var current = null;
+    function setActive(id) {
+      if (id === current) return;
+      current = id;
+      links.forEach(function (a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      var visible = entries.filter(function (e) { return e.isIntersecting; });
+      if (visible.length) {
+        visible.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+        setActive(visible[0].target.id);
+      }
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+    targets.forEach(function (t) { io.observe(t); });
+  })();
+</script>

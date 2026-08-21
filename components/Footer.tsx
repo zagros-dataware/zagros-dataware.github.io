@@ -10,11 +10,11 @@ export default function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-3 text-lg font-bold text-white">
             <Image
-              src={`${basePath}/logo.png`}
+              src={`${basePath}/logo-reversed.svg`}
               alt={`${site.name} logo`}
               width={32}
-              height={32}
-              className="h-8 w-8 object-contain"
+              height={21}
+              className="h-6 w-auto object-contain"
             />
             {site.name}
           </Link>

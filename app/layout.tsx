@@ -20,7 +20,10 @@ export const metadata: Metadata = {
   },
   description: site.description,
   icons: {
-    icon: `${basePath}/favicon.png`,
+    icon: [
+      { url: `${basePath}/favicon.svg`, type: "image/svg+xml" },
+      { url: `${basePath}/favicon.png`, sizes: "256x256", type: "image/png" },
+    ],
   },
   openGraph: {
     title: `${site.name} | Enterprise BPM, Startup Enablement & Web Design`,

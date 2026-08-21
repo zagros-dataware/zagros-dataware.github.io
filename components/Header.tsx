@@ -48,11 +48,11 @@ export default function Header() {
           className="flex items-center gap-3 text-xl font-bold text-primary"
         >
           <Image
-            src={`${basePath}/logo.png`}
+            src={`${basePath}/logo.svg`}
             alt={`${site.name} logo`}
             width={40}
-            height={40}
-            className="h-10 w-10 object-contain"
+            height={26}
+            className="h-8 w-auto object-contain"
             priority
           />
           {site.name}
