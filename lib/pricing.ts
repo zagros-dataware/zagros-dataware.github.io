@@ -5,9 +5,23 @@ export interface BuildTier {
   tagline: string;
   featured?: boolean;
   features: string[];
+  excludes?: string[];
 }
 
 export const buildTiers: BuildTier[] = [
+  {
+    name: "One-Page Intro",
+    price: "$500",
+    tagline: "A minimal single page to put your business online — nothing beyond the page itself.",
+    features: [
+      "1 custom-designed page",
+      "Core business info, services, and contact details",
+      "Mobile-responsive",
+      "1 round of revisions",
+      "About 1 week turnaround",
+    ],
+    excludes: ["No additional pages, SEO setup, or integrations — see Launch for those"],
+  },
   {
     name: "Launch",
     price: "$1,200",
