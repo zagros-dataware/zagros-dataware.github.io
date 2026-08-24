@@ -31,6 +31,8 @@ Left as recommendations, not yet built:
   from the brand book), the illustrative-content disclosure rule, blog/resource
   frontmatter reference, and a pre-publish checklist. Read before writing a new
   post in `content/blog/` or `content/resources/`.
+- [`social-posts.md`](./social-posts.md) — Telegram/WhatsApp intro posts,
+  English and Farsi, ready to copy-paste into groups or DMs.
 
 ## Ready-to-use assets
 
