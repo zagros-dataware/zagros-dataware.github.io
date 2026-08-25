@@ -4,7 +4,7 @@ import TrackHero from "@/components/track/TrackHero";
 import TrackCapabilities from "@/components/track/TrackCapabilities";
 import SelectedWork from "@/components/track/SelectedWork";
 import PortfolioShowcase from "@/components/track/PortfolioShowcase";
-import Pricing from "@/components/track/Pricing";
+import PricingTeaser from "@/components/track/PricingTeaser";
 import RelatedContent from "@/components/track/RelatedContent";
 import TrackCTA from "@/components/track/TrackCTA";
 
@@ -22,7 +22,7 @@ export default function WebDesignPage() {
       <TrackCapabilities track={track} />
       <SelectedWork />
       <PortfolioShowcase />
-      <Pricing />
+      <PricingTeaser />
       <RelatedContent track={track.id} includeResources={false} />
       <TrackCTA track={track} />
     </>

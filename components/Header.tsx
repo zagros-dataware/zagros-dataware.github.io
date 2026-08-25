@@ -9,6 +9,7 @@ import { basePath } from "@/lib/basePath";
 import { trackList } from "@/lib/tracks";
 
 const primaryLinks = [
+  { href: "/pricing", label: "Pricing" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Blog" },
 ];
