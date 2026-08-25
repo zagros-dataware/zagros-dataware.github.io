@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { site } from "@/lib/site";
+import ContactChannels from "../ContactChannels";
 
 export default function PricingCTA() {
   return (
@@ -12,12 +11,9 @@ export default function PricingCTA() {
           Tell us what you&apos;re trying to get done, and we&apos;ll point
           you at the right starting point — no obligation.
         </p>
-        <Link
-          href={`mailto:${site.email}?subject=${encodeURIComponent("Pricing question")}`}
-          className="mt-8 inline-block rounded-md bg-accent px-8 py-3 font-semibold text-white transition-colors hover:bg-accent-dark"
-        >
-          Email Us
-        </Link>
+        <div className="mt-8">
+          <ContactChannels />
+        </div>
       </div>
     </section>
   );

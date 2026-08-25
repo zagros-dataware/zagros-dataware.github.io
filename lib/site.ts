@@ -5,6 +5,9 @@ export const site = {
   description:
     "Zagros Dataware is an IT products, consultancy, and business process optimization firm registered in Armenia. We bring BPM, Agile-BPM, BABOK, and ERP discipline to enterprises and public institutions, Lean Startup, Design Sprints, Design Thinking, and Value Proposition Design to startups, and process-minded web design to local businesses.",
   email: "honarmand.ali.ha@gmail.com",
+  phoneDisplay: "+374 33 041499",
+  whatsappLink: "https://wa.me/37433041499",
+  telegramLink: "https://t.me/+37433041499",
   location: "Yerevan, Armenia",
   url: "https://zagros-dataware.github.io/",
 };

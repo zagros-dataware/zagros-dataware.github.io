@@ -1,6 +1,5 @@
-import Link from "next/link";
 import type { Track } from "@/lib/tracks";
-import { site } from "@/lib/site";
+import ContactChannels from "../ContactChannels";
 
 export default function TrackCTA({ track }: { track: Track }) {
   return (
@@ -16,13 +15,9 @@ export default function TrackCTA({ track }: { track: Track }) {
           Tell us where things stand today, and we&apos;ll suggest the right
           first step.
         </p>
-        <Link
-          href={`mailto:${site.email}?subject=${encodeURIComponent(`${track.name} inquiry`)}`}
-          className="mt-8 inline-block rounded-md bg-white px-8 py-3 font-semibold transition-opacity hover:opacity-90"
-          style={{ color: track.accentDark }}
-        >
-          Email Us
-        </Link>
+        <div className="mt-8">
+          <ContactChannels />
+        </div>
       </div>
     </section>
   );

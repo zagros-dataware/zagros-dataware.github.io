@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site, footerLinks } from "@/lib/site";
 import { basePath } from "@/lib/basePath";
+import ContactChannels from "./ContactChannels";
 
 export default function Footer() {
   return (
@@ -19,6 +20,9 @@ export default function Footer() {
             {site.name}
           </Link>
           <p className="mt-4 max-w-xs text-sm">{site.tagline}</p>
+          <div className="mt-5">
+            <ContactChannels size="sm" align="start" />
+          </div>
         </div>
 
         {Object.entries(footerLinks).map(([heading, links]) => (

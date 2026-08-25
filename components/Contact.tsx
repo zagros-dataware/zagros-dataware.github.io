@@ -1,5 +1,5 @@
-import { site } from "@/lib/site";
 import SectionTitle from "./SectionTitle";
+import ContactChannels from "./ContactChannels";
 
 export default function Contact() {
   return (
@@ -11,14 +11,8 @@ export default function Contact() {
           business online? Tell us which of the three tracks fits, and
           we&apos;ll take it from there.
         </p>
-        <div className="mt-6 text-xl font-semibold">
-          Inquiries:{" "}
-          <a
-            href={`mailto:${site.email}`}
-            className="text-accent hover:underline"
-          >
-            {site.email}
-          </a>
+        <div className="mt-8">
+          <ContactChannels />
         </div>
       </div>
     </section>
