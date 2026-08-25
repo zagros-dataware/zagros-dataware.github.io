@@ -15,7 +15,7 @@ export default function PricingPage() {
     <>
       <PricingHero />
       <Pricing />
-      <EngagementTracks />
+      <EngagementTracks sectionId="engagements" />
       <PricingCTA />
     </>
   );

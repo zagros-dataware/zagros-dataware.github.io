@@ -3,6 +3,7 @@ import { tracks } from "@/lib/tracks";
 import TrackHero from "@/components/track/TrackHero";
 import TrackCapabilities from "@/components/track/TrackCapabilities";
 import Sectors from "@/components/Sectors";
+import EngagementTracks from "@/components/pricing/EngagementTracks";
 import RelatedContent from "@/components/track/RelatedContent";
 import TrackCTA from "@/components/track/TrackCTA";
 
@@ -19,6 +20,12 @@ export default function EnterprisePage() {
       <TrackHero track={track} />
       <TrackCapabilities track={track} />
       <Sectors />
+      <EngagementTracks
+        trackIds={["enterprise"]}
+        title="Pricing"
+        description="Enterprise process work isn't a fixed package — scope varies by organization and problem. Here's what's covered and how pricing gets set."
+        linkToFullPricing
+      />
       <RelatedContent track={track.id} />
       <TrackCTA track={track} />
     </>

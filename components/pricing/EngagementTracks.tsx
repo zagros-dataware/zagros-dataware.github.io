@@ -1,31 +1,42 @@
 import Link from "next/link";
-import { tracks } from "@/lib/tracks";
+import { tracks, type TrackId } from "@/lib/tracks";
 import SectionTitle from "../SectionTitle";
 import Reveal from "../motion/Reveal";
 import { StaggerGroup, StaggerItem } from "../motion/Stagger";
 
-const engagementTrackIds = ["enterprise", "startup"] as const;
+export default function EngagementTracks({
+  trackIds = ["enterprise", "startup"],
+  title = "Enterprise & Startup Engagements",
+  description = "These aren't productized packages — scope varies too much by organization and problem for a fixed price list to mean anything. Here's what's covered and how pricing gets set.",
+  linkToFullPricing = false,
+  sectionId = "pricing",
+}: {
+  trackIds?: TrackId[];
+  title?: string;
+  description?: string;
+  linkToFullPricing?: boolean;
+  sectionId?: string;
+}) {
+  const single = trackIds.length === 1;
 
-export default function EngagementTracks() {
   return (
-    <section className="bg-bg-light px-[5%] py-24">
+    <section id={sectionId} className="bg-bg-light px-[5%] py-24">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <Reveal>
-            <SectionTitle>Enterprise &amp; Startup Engagements</SectionTitle>
+            <SectionTitle>{title}</SectionTitle>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-secondary">
-              These aren&apos;t productized packages — scope varies too much
-              by organization and problem for a fixed price list to mean
-              anything. Here&apos;s what&apos;s covered and how pricing gets
-              set.
+              {description}
             </p>
           </Reveal>
         </div>
 
-        <StaggerGroup className="mt-12 grid gap-8 md:grid-cols-2">
-          {engagementTrackIds.map((id) => {
+        <StaggerGroup
+          className={`mt-12 grid gap-8 ${single ? "mx-auto max-w-xl" : "md:grid-cols-2"}`}
+        >
+          {trackIds.map((id) => {
             const track = tracks[id];
             return (
               <StaggerItem key={id}>
@@ -64,27 +75,40 @@ export default function EngagementTracks() {
                     </p>
                   </div>
 
-                  <Link
-                    href={track.href}
-                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold"
-                    style={{ color: track.accentDark }}
-                  >
-                    Explore {track.shortName}
-                    <svg className="h-4 w-4" viewBox="0 0 16 16" fill="none">
-                      <path
-                        d="M4 12L12 4M12 4H5M12 4V11"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </Link>
+                  {!single && (
+                    <Link
+                      href={track.href}
+                      className="mt-6 inline-flex items-center gap-1 text-sm font-semibold"
+                      style={{ color: track.accentDark }}
+                    >
+                      Explore {track.shortName}
+                      <svg className="h-4 w-4" viewBox="0 0 16 16" fill="none">
+                        <path
+                          d="M4 12L12 4M12 4H5M12 4V11"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
               </StaggerItem>
             );
           })}
         </StaggerGroup>
+
+        {linkToFullPricing && (
+          <Reveal delay={0.15}>
+            <p className="mt-10 text-center text-sm text-secondary">
+              Comparing against Web Design, or another track?{" "}
+              <Link href="/pricing" className="font-semibold text-accent-dark hover:underline">
+                See the full pricing page
+              </Link>
+            </p>
+          </Reveal>
+        )}
       </div>
     </section>
   );
