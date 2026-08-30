@@ -47,9 +47,27 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     name: "Persepolis",
     url: "https://persepolis.onrender.com",
+    image: "/portfolio/persepolis.png",
+    industry: "History, Culture & Museums",
+    location: "Iran - Shiraz",
+    description:
+      "A site for a the Persepolis World Heritage Site, built to showcase the history and cultural significance of the site, with a focus on educational content and visitor information.",
   },
   {
     name: "Uru Band",
     url: "https://uruband-site.onrender.com",
+    image: "/portfolio/uru-band.png",
+    industry: "Art & Music, Music Bands",
+    location: "Armenia - Yerevan",
+    description: "A site for a local Armenian band, built to showcase their music, videos, and upcoming events, with a focus on fan engagement and social media integration.",
   },
+  {
+    name: "Macan Group",
+    url: "https://macanco.com",
+    image: "/portfolio/macanco.png",
+    industry: "Investment, Trade, & Construction",
+    location: "Oman - Muscat",
+    description:
+      "A site for a regional investment and construction company, built to showcase their portfolio of projects, services, and expertise, with a focus on credibility and professionalism.",
+  }
 ];
