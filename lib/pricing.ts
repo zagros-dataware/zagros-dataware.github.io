@@ -11,7 +11,7 @@ export interface BuildTier {
 export const buildTiers: BuildTier[] = [
   {
     name: "One-Page Intro",
-    price: "free",
+    price: "free - $500 as Initial Credit",
     tagline: "A minimal single page to put your business online — nothing beyond the page itself.",
     features: [
       "1 custom-designed page",
