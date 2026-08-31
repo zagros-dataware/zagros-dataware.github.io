@@ -69,5 +69,14 @@ export const portfolioProjects: PortfolioProject[] = [
     location: "Oman - Muscat",
     description:
       "A site for a regional investment and construction company, built to showcase their portfolio of projects, services, and expertise, with a focus on credibility and professionalism.",
+  },
+  {
+    name: "Techno GFS",
+    url: "https://technogfs.github.io",
+    image: "/portfolio/technogfs.png",
+    industry: "Food Industry, Food Color",
+    location: "Oman - Muscat",
+    description:
+      "TechnoGFS develops food color solutions for beverages, ice cream, confectionery and fat-based products — with customization and technical support to help bring your product to life.",
   }
 ];
