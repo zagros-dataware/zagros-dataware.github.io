@@ -44,9 +44,14 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-6 text-center text-sm">
-        <div className="mx-auto w-[90%] max-w-6xl">
-          &copy; {new Date().getFullYear()} {site.legalName}. All rights
-          reserved. Registered in {site.location}.
+        <div className="mx-auto flex w-[90%] max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row">
+          <p>
+            &copy; {new Date().getFullYear()} {site.legalName}. All rights
+            reserved. Registered in {site.location}.
+          </p>
+          <Link href="/privacy" className="transition-colors hover:text-white">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
