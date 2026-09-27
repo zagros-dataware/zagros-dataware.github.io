@@ -1,3 +1,11 @@
+---
+title: "Your Next Customer May Already Be Looking for You"
+date: "2026-09-17"
+excerpt: "The problem may not be traffic — it may be discoverability. A five-point framework (search, presence, relevance, trust, action) for diagnosing where your customer journey is actually breaking before you invest in more marketing."
+tags: ["Discoverability", "Local Search", "Growth", "Positioning"]
+track: "local"
+---
+
 # **Your Next Customer May Already Be Looking for You**
 
 ## **The problem may not be traffic. It may be discoverability.**
