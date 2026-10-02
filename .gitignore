@@ -42,6 +42,8 @@ next-env.d.ts
 
 /.codebase-memory/
 /.idea/
+/.cursor/
+/.vscode/
 
 # internal planning material, not part of the website itself
 docs/marketing/Content Marketing and Strategy-*.zip

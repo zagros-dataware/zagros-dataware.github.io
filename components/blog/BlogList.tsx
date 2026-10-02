@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { PostMeta } from "@/lib/content";
 import { trackList } from "@/lib/tracks";
 import PostCard from "../PostCard";
@@ -8,7 +8,11 @@ import { StaggerGroup, StaggerItem } from "../motion/Stagger";
 
 export default function BlogList({ posts }: { posts: PostMeta[] }) {
   const [filter, setFilter] = useState<string>("all");
-  const filtered = filter === "all" ? posts : posts.filter((p) => p.track === filter);
+  const [filtered, setFiltered] = useState<PostMeta[]>([]);
+
+  useEffect(() => {
+    setFiltered(filter === "all" ? posts : posts.filter((p) => p.track === filter));
+  }, [[posts, filtered]])
 
   return (
     <div>
