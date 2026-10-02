@@ -6,8 +6,6 @@ tags: ["Discoverability", "Local Search", "Growth", "Positioning"]
 track: "local"
 ---
 
-# **Your Next Customer May Already Be Looking for You**
-
 ## **The problem may not be traffic. It may be discoverability.**
 
 When a business wants more customers, the natural response is often to think about advertising, social media, SEO, content or a new website.
