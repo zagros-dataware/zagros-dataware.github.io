@@ -12,7 +12,7 @@ export default function BlogList({ posts }: { posts: PostMeta[] }) {
 
   useEffect(() => {
     setFiltered(filter === "all" ? posts : posts.filter((p) => p.track === filter));
-  }, [[posts, filtered]])
+  }, [posts, filtered])
 
   return (
     <div>

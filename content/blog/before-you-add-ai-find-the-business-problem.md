@@ -3,7 +3,7 @@ title: "Before You Add AI, Find the Business Problem"
 date: "2026-10-02"
 excerpt: "AI can be useful, but not every business problem needs it. Learn how to identify the problem, find the evidence, evaluate the opportunity and build a practical AI business case."
 tags: ["AI", "Business Problem", "Process Discovery", "Process Improvement"]
-track: "local"
+track: "enterprise"
 ---
 
 AI has become an increasingly common part of conversations about business growth, efficiency and digital transformation.
