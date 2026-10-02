@@ -6,13 +6,25 @@ import type { ReactNode } from "react";
 const container = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.12 },
+    transition: {
+      staggerChildren: 0.12,
+    },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const,
+    },
+  },
 };
 
 export function StaggerGroup({
@@ -27,8 +39,7 @@ export function StaggerGroup({
       className={className}
       variants={container}
       initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      animate="show"
     >
       {children}
     </motion.div>
@@ -43,7 +54,12 @@ export function StaggerItem({
   className?: string;
 }) {
   return (
-    <motion.div className={className} variants={item}>
+    <motion.div
+      className={className}
+      variants={item}
+      initial="hidden"
+      animate="show"
+    >
       {children}
     </motion.div>
   );

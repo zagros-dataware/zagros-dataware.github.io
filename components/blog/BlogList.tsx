@@ -1,18 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { PostMeta } from "@/lib/content";
 import { trackList } from "@/lib/tracks";
 import PostCard from "../PostCard";
 import { StaggerGroup, StaggerItem } from "../motion/Stagger";
 
+function filterBlogPostsByTrack(
+  posts: PostMeta[],
+  trackId: string
+): PostMeta[] {
+  if (trackId === "all") {
+    return posts;
+  }
+
+  return posts.filter((post) => post.track === trackId);
+}
+
 export default function BlogList({ posts }: { posts: PostMeta[] }) {
   const [filter, setFilter] = useState<string>("all");
-  const [filtered, setFiltered] = useState<PostMeta[]>([]);
-
-  useEffect(() => {
-    setFiltered(filter === "all" ? posts : posts.filter((p) => p.track === filter));
-  }, [posts, filtered])
+  const filteredPosts = filterBlogPostsByTrack(posts, filter);
 
   return (
     <div>
@@ -33,14 +40,14 @@ export default function BlogList({ posts }: { posts: PostMeta[] }) {
       </div>
 
       <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((post) => (
+        {filteredPosts.map((post) => (
           <StaggerItem key={post.slug}>
             <PostCard post={post} />
           </StaggerItem>
         ))}
       </StaggerGroup>
 
-      {filtered.length === 0 && (
+      {filteredPosts.length === 0 && (
         <p className="mt-12 text-center text-secondary">
           No articles in this track yet.
         </p>
