@@ -6,8 +6,6 @@ tags: ["AI", "Business Problem", "Process Discovery", "Process Improvement"]
 track: "local"
 ---
 
-# **Before You Add AI, Find the Business Problem**
-
 AI has become an increasingly common part of conversations about business growth, efficiency and digital transformation.
 
 But there is a question that should come before the technology:
